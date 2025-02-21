@@ -17,7 +17,7 @@ textLabel.Text = "그런게 있겠냐 개병신아"
 textLabel.TextScaled = true
 textLabel.BackgroundTransparency = 1
 textLabel.Visible = false
-textLabel.Font = Enum.Font.SourceSansBold -- 굵게 만들기
+textLabel.Font = Enum.Font.SourceSansBold
 textLabel.Parent = screenGui
 
 local colors = {Color3.fromRGB(255, 0, 0), Color3.fromRGB(255, 165, 0), Color3.fromRGB(255, 255, 0), Color3.fromRGB(0, 255, 0), Color3.fromRGB(0, 0, 255), Color3.fromRGB(75, 0, 130), Color3.fromRGB(148, 0, 211)}
