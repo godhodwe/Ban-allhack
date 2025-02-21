@@ -1,0 +1,47 @@
+local player = game.Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+local screenGui = Instance.new("ScreenGui", playerGui)
+local button = Instance.new("TextButton")
+button.Size = UDim2.new(0, 200, 0, 50)
+button.Position = UDim2.new(0.5, -100, 0.8, -25)
+button.Text = "밴올 - ban all"
+button.TextScaled = true
+button.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+button.TextColor3 = Color3.fromRGB(255, 255, 255)
+button.Parent = screenGui
+
+local textLabel = Instance.new("TextLabel")
+textLabel.Size = UDim2.new(0, 600, 0, 100)
+textLabel.Position = UDim2.new(0, 0, 0.4, -50)
+textLabel.Text = "그런게 있겠냐 개병신아"
+textLabel.TextScaled = true
+textLabel.BackgroundTransparency = 1
+textLabel.Visible = false
+textLabel.Parent = screenGui
+
+local colors = {Color3.fromRGB(255, 0, 0), Color3.fromRGB(255, 165, 0), Color3.fromRGB(255, 255, 0), Color3.fromRGB(0, 255, 0), Color3.fromRGB(0, 0, 255), Color3.fromRGB(75, 0, 130), Color3.fromRGB(148, 0, 211)}
+local isAnimating, speed = false, 0.05
+
+local function animateText()
+    local index, position = 1, 0
+    while isAnimating do
+        textLabel.TextColor3 = colors[index]
+        index = (index % #colors) + 1
+        position = position + 10
+        if position > 500 then position = 0 end
+        textLabel.Position = UDim2.new(0, position, 0.4, -50)
+        wait(speed)
+    end
+end
+
+button.MouseButton1Click:Connect(function()
+    isAnimating = not isAnimating
+    if isAnimating then
+        textLabel.Visible = true
+        button.Text = "정지"
+        animateText()
+    else
+        textLabel.Visible = false
+        button.Text = "밴올 - ban all"
+    end
+end)
