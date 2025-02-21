@@ -20,7 +20,7 @@ textLabel.Visible = false
 textLabel.Parent = screenGui
 
 local colors = {Color3.fromRGB(255, 0, 0), Color3.fromRGB(255, 165, 0), Color3.fromRGB(255, 255, 0), Color3.fromRGB(0, 255, 0), Color3.fromRGB(0, 0, 255), Color3.fromRGB(75, 0, 130), Color3.fromRGB(148, 0, 211)}
-local isAnimating, speed = false, 0.05
+local isAnimating, speed = false, 0.001
 
 local function animateText()
     local index, position = 1, 0
